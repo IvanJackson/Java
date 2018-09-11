@@ -6,7 +6,7 @@ public class MyComponent extends JComponent {
 	public void paintComponent(Graphics2D g) {
 		
 		Graphics2D g2 = (Graphics2D) g;
-		g.drawString("Hello World!",10, 10);
+		g2.drawString("Hello World!",10, 10);
 		
 		
 		Car theCar = new Car(0,0);

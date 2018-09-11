@@ -7,6 +7,7 @@ public class Main {
 		JFrame mainFrame = new JFrame("My First GUI");
 		// pixel es abbreviatura de picture element
 		mainFrame.setSize(500, 600);
+		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		// by default, cuando los creas, son invisibles
 		mainFrame.setVisible(true);
 //		mainFrame.setBackground(null);
