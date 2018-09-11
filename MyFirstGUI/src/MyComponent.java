@@ -27,6 +27,8 @@ public static int counter = 0;
 		theCar.draw(g);
 		theCar2.draw(g);
 		theCar3.draw(g);
+		//this counts the amount of time that the paintComponent method
+		//Is called
 		counter= counter +1;
 		System.out.println("counter = " + counter);
 		
