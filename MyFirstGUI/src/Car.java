@@ -27,6 +27,13 @@ public class Car {
 	public void setyPosition(int yPosition) {
 		this.yPosition = yPosition;
 	}
+	public int getWidth() {
+		return 120;
+	}
+	public int getHeight() {
+		return 80;
+		//este valor fue calculado al sumar la alutra de las gomas y el techo
+	}
 	
 	
 	public void draw(Graphics g) {
@@ -37,6 +44,8 @@ public class Car {
 		//SO we must change it so it accepts the coordinates of the car
 		/*
 		 * We use the getter "getxPosition() to avoid conflicts
+		 * Se llama dinamico se cambia en run time
+		 * Se llama static si solo se crea en compile time
 		 */
 		Rectangle body = new Rectangle(this.getxPosition()+0, this.getyPosition()+20, 120, 30);
 		Ellipse2D.Double rearTire = new Ellipse2D.Double(this.getxPosition()+20, this.getyPosition()+50, 20, 20);
