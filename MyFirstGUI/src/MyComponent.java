@@ -1,4 +1,5 @@
 import java.awt.Graphics;
+import java.util.Random;
 
 import javax.swing.JComponent;
 
@@ -24,9 +25,22 @@ public static int counter = 0;
 		int yLowerRight = this.getHeight() -theCar3.getHeight();
 		theCar3.setxPosition(xLowerRight);
 		theCar3.setyPosition(yLowerRight);
+		
+		Car theCar4 = new Car(0,0);
+		Random genRand = new Random();
+		// el parametro de nextInt es el valor maximo
+		int randomX = genRand.nextInt(this.getWidth() - theCar4.getWidth());
+		int randomY =genRand.nextInt(this.getHeight() - theCar4.getHeight());
+		theCar4.setxPosition(randomX);
+		theCar4.setyPosition(randomY);
+		
+		//What if we want the car to repaint itself without having
+		// to call the method again
+		
 		theCar.draw(g);
 		theCar2.draw(g);
 		theCar3.draw(g);
+		theCar4.draw(g);
 		//this counts the amount of time that the paintComponent method
 		//Is called
 		counter= counter +1;

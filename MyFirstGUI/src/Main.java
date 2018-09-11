@@ -1,7 +1,7 @@
 import javax.swing.JFrame;
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
 		JFrame mainFrame = new JFrame("My First GUI");
@@ -15,6 +15,15 @@ public class Main {
 		MyComponent myComponent = new MyComponent();
 		mainFrame.add(myComponent);
 
+		//This makes the mainFrame repaint itself without having to move the
+		//frame
+		while(true) {
+			mainFrame.repaint();
+			//it sccepts miliseconds, one second is a thousand miliseconds
+			//It throws an error because of an exception, so we added
+			//The "throws InterrupedException" so it works
+			Thread.sleep(1000);
+		}
 	}
 
 }
