@@ -11,6 +11,8 @@ public class Chapter_3 {
 		frame.setVisible(true);
 		RectangleComponent component = new RectangleComponent();
 		frame.add(component);
+		EllipseComponent circle = new EllipseComponent();
+		frame.add(circle);
 	}
 
 }
