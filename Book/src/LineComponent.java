@@ -9,6 +9,7 @@ public class LineComponent extends JComponent{
 		Graphics2D g2 = (Graphics2D) g;
 		Line2D.Double line = new Line2D.Double(0, 3, 20, 70);
 		g2.draw(line);
+		g2.drawString("Hello World!", 20, 30);
 	}
 	
 }
