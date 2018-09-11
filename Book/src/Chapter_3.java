@@ -13,6 +13,8 @@ public class Chapter_3 {
 		frame.add(component);
 		EllipseComponent circle = new EllipseComponent();
 		frame.add(circle);
+		LineComponent line = new LineComponent();
+		frame.add(line);
 	}
 
 }
