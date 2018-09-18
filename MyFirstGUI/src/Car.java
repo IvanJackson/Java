@@ -9,11 +9,18 @@ public class Car {
 
 	private int xPosition;
 	private int yPosition;
+	private int speed; //car speed per second
+	
 	
 	public Car(int xPosition, int yPosition) {
+		this(xPosition,yPosition,5);
+	}
+	
+	public Car(int xPosition, int yPosition,int speed) {
 		super();
 		this.xPosition = xPosition;
 		this.yPosition = yPosition;
+		this.speed = speed;
 	}
 	public int getxPosition() {
 		return xPosition;
@@ -33,6 +40,9 @@ public class Car {
 	public int getHeight() {
 		return 80;
 		//este valor fue calculado al sumar la alutra de las gomas y el techo
+	}
+	public int getSpeed() {
+		return speed;
 	}
 	
 	

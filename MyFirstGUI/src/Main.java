@@ -12,7 +12,7 @@ public class Main {
 		mainFrame.setVisible(true);
 //		mainFrame.setBackground(null);
 //		mainFrame.setShape(null);
-		MyComponent myComponent = new MyComponent();
+		CarStage myComponent = new CarStage();
 		mainFrame.add(myComponent);
 
 		//This makes the mainFrame repaint itself without having to move the
@@ -22,7 +22,7 @@ public class Main {
 			//it sccepts miliseconds, one second is a thousand miliseconds
 			//It throws an error because of an exception, so we added
 			//The "throws InterrupedException" so it works
-			Thread.sleep(1000);
+			Thread.sleep(1000/30);
 		}
 	}
 

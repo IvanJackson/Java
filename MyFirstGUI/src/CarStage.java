@@ -3,8 +3,9 @@ import java.util.Random;
 
 import javax.swing.JComponent;
 
-public class MyComponent extends JComponent {
+public class CarStage extends JComponent {
 public static int counter = 0;
+private Car theCar5 = new Car(0,0, 10);
 	public void paintComponent(Graphics g) {
 		/*
 		 * Cada vez que la pantalla se mueva, el paintComponent se llama
@@ -41,10 +42,22 @@ public static int counter = 0;
 		theCar2.draw(g);
 		theCar3.draw(g);
 		theCar4.draw(g);
+		
+		
 		//this counts the amount of time that the paintComponent method
 		//Is called
 		counter= counter +1;
 		System.out.println("counter = " + counter);
 		
+		
+		
+		
+		/*We are going to make the car move in a single line
+		 * 
+		 * We are moving the car outside of the paintComponent because we want to move the car that aready exists, not create a new one every single time it repaints it
+		 */
+		
+		theCar5.setxPosition(theCar5.getxPosition()+theCar5.getSpeed());
+		theCar5.draw(g);
 	}
 }
