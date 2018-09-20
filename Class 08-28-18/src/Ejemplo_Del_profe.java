@@ -29,6 +29,7 @@ public class Ejemplo_Del_profe {
 		CaesarCypher c = new CaesarCypher(3);
 		String clear = "HELLO";
 		String cyphered = c.encode(clear);
+		System.out.println(cyphered);
 		
 		
 	}

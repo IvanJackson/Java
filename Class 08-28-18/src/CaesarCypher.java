@@ -26,13 +26,15 @@ public class CaesarCypher {
 	
 	public String encode(String clear) {
 		// TODO Auto-generated method stub
+		String newString= "";
 		System.out.println(shiftedAlphabet);
 		for (int i=0; i < clear.length(); i++) {
-			String newString= "";
+			
 			char letter = clear.charAt(i);
+			newString += letter;
 //			letter = shiftedAlphabet[i];
 		}
-		return null;
+		return newString;
 	}
 	
 	// Usamos el API para buscar el substring() method

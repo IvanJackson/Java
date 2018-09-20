@@ -56,8 +56,30 @@ private Car theCar5 = new Car(0,0, 10);
 		 * 
 		 * We are moving the car outside of the paintComponent because we want to move the car that aready exists, not create a new one every single time it repaints it
 		 */
-		
-		theCar5.setxPosition(theCar5.getxPosition()+theCar5.getSpeed());
+		if(theCar5.getDirection()>=0) {
+			//Car is going left to right
+			if(theCar5.getxPosition()+theCar5.getWidth()<this.getWidth()) {
+				// car has not reached border
+				theCar5.setxPosition(theCar5.getxPosition()+theCar5.getSpeed());
+			}
+			else {
+				//car has reached border
+				theCar5.setDirection(-1);
+			}
+		}
+		else {
+			//Car is going right to left
+			if(theCar5.getxPosition()>0) {
+				// car has not reached border
+				theCar5.setxPosition(theCar5.getxPosition()+theCar5.getSpeed()*theCar5.getDirection());
+			}
+			else {
+				//car has reached the border
+				theCar5.setDirection(1);
+			}
+		}
+	
+		//theCar5.setxPosition(theCar5.getxPosition()+theCar5.getSpeed());
 		theCar5.draw(g);
 	}
 }
