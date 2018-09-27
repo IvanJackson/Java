@@ -12,7 +12,10 @@ public class Car {
 	private int speed; //car speed per second
 	private int direction;
 	private static final int DEFAULT_PIXELS_PER_TICK = 10;
+	
+
 	private static final int DEFAULT_DIRECTION = 1;
+	private Color color;
 	
 	public Car(int xPosition, int yPosition) {
 		this(xPosition,yPosition, DEFAULT_PIXELS_PER_TICK, DEFAULT_DIRECTION);
@@ -29,6 +32,7 @@ public class Car {
 		this.yPosition = yPosition;
 		this.speed = speed;
 		this.direction = direction;
+		this.color =Color.DARK_GRAY;
 	}
 	public int getxPosition() {
 		return xPosition;
@@ -72,6 +76,13 @@ public class Car {
 	public void setDirection(int direction) {
 		this.direction = direction;
 	}
+	public Color getColor() {
+		return color;
+	}
+
+	public void setColor(Color color) {
+		this.color = color;
+	}
 	
 	public void draw(Graphics g) {
 		
@@ -103,15 +114,14 @@ public class Car {
 			frontWindow = new Line2D.Double(20+this.getxPosition()+60, this.getyPosition()+0, 20+this.getxPosition()+80, this.getyPosition()+20);
 			roof = new Line2D.Double(20+this.getxPosition()+40, this.getyPosition()+0, 20+this.getxPosition()+60, this.getyPosition()+0);
 		}
-		g2.setColor(Color.blue);
+		g2.setColor(this.getColor());
 		g2.fill(body);
-		g2.setColor(Color.black);
-		g2.fill(rearTire);
-		g2.fill(frontTire);
-		g2.setColor(Color.blue);
 		g2.draw(rearWindow);
 		g2.draw(frontWindow);
 		g2.draw(frontWindow);
 		g2.draw(roof);
+		g2.setColor(Color.black);
+		g2.fill(rearTire);
+		g2.fill(frontTire);
 	}
 }
