@@ -12,8 +12,14 @@ public class Main {
 		mainFrame.setVisible(true);
 //		mainFrame.setBackground(null);
 //		mainFrame.setShape(null);
-		CarStage myComponent = new CarStage();
-		mainFrame.add(myComponent);
+		CarStage myCarStage = new CarStage();
+		
+		int yPos = 0;
+		for(int i =0;i<5;i++) {
+			myCarStage.addCar(new Car(0,30+yPos,10));
+			yPos+=100;
+		}
+		mainFrame.add(myCarStage);
 
 		//This makes the mainFrame repaint itself without having to move the
 		//frame

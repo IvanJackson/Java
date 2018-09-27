@@ -105,9 +105,9 @@ public class Car {
 		}
 		g2.setColor(Color.blue);
 		g2.fill(body);
-		g2.setColor(Color.BLACK);
-		g2.draw(rearTire);
-		g2.draw(frontTire);
+		g2.setColor(Color.black);
+		g2.fill(rearTire);
+		g2.fill(frontTire);
 		g2.setColor(Color.blue);
 		g2.draw(rearWindow);
 		g2.draw(frontWindow);
