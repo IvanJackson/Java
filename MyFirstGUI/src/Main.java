@@ -1,35 +1,59 @@
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
 public class Main {
 
 	public static void main(String[] args) throws InterruptedException {
-		// TODO Auto-generated method stub
-		
+
 		JFrame mainFrame = new JFrame("My First GUI");
-		// pixel es abbreviatura de picture element
-		mainFrame.setSize(500, 600);
-		mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		// by default, cuando los creas, son invisibles
-		mainFrame.setVisible(true);
-//		mainFrame.setBackground(null);
-//		mainFrame.setShape(null);
-		CarStage myCarStage = new CarStage();
-		
-		int yPos = 0;
-		for(int i =0;i<5;i++) {
-			myCarStage.addCar(new Car(0,30+yPos,10));
-			yPos+=100;
+
+		mainFrame.setSize(800, 600);
+
+		VehicleStage myCarStage = new VehicleStage();
+
+		int yPos=12;
+		for (int i=0; i<6; i++) {
+			if (i % 3 == 0) {
+				myCarStage.addVehicle(new PoliceCar(0, yPos, 10));
+			}
+			else if  (i % 3 == 1) {
+				myCarStage.addVehicle(new Car(0, yPos, 10));
+			}
+			else {
+				myCarStage.addVehicle(new Truck(0, yPos, 10));
+			}
+			yPos += 80;
 		}
+
 		mainFrame.add(myCarStage);
 
-		//This makes the mainFrame repaint itself without having to move the
-		//frame
-		while(true) {
-			mainFrame.repaint();
-			//it sccepts miliseconds, one second is a thousand miliseconds
-			//It throws an error because of an exception, so we added
-			//The "throws InterrupedException" so it works
-			Thread.sleep(1000/30);
+		mainFrame.setVisible(true);
+
+
+		int n=0; 
+		while (n==0) {
+			
+			int[] theWinners = myCarStage.getWinners();
+			
+			while(theWinners == null) {
+
+				mainFrame.repaint();
+
+				Thread.sleep(1000/30);
+
+				theWinners = myCarStage.getWinners();
+			}
+
+			n = JOptionPane.showConfirmDialog(
+					mainFrame,
+					"Race Again??",
+					"End of Race",
+					JOptionPane.YES_NO_OPTION);
+			
+			myCarStage.resetRace();
+			//n=0;
 		}
+		
 	}
 
 }
